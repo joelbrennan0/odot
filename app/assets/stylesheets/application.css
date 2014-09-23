@@ -18,3 +18,42 @@ div.alert {
 div.flash.success {border: 2px solid green; color: green;}
 div.flash.error {border: 2px solid red; color: red;}
 div.flash.notice {border: 2px solid blue; color: blue;}
+
+body {
+	margin: 0 auto;
+}
+
+.header {
+	background-color: #4E698E;
+	padding: 20px;
+	overflow: hidden;
+}
+.header h1, header ul li {
+	float: left;
+	margin: 10px;
+}
+.header h1 a, .header h3 a{
+	color: #F5F7F9;
+	float: left;
+	text-decoration: none;
+	font-family: Verdana;
+	padding: 5px;
+}
+.header h1 a:hover, .header h3 a:hover{
+	background-color: #A9B8CD;
+}
+.nav ul{
+	float: right;
+	padding: 8px 10px;
+	list-style: none;
+}
+.nav ul li a {
+	color: #F5F7F9;
+	text-decoration: none;
+	font-family: Verdana; 
+	font-size: 20px;
+	padding: 5px
+}
+.nav ul li a:hover {
+	background-color: #A9B8CD;
+}
