@@ -64,6 +64,16 @@ body {
 .nav ul li a:hover {
 	background-color: #A9B8CD;
 }
+th, td {
+	padding: 2px 4px;
+}
+tr:nth-child(even) {
+	background-color: #B4AFD2;
+}
+th {
+	background-color: #0E5344;
+	color: #fff;
+}
 .footer {
 	background-color: #0E5344;
 	color: #F5F7F9;
