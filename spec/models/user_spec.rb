@@ -3,15 +3,21 @@ require 'spec_helper'
 describe User do
 let(:valid_attributes) {
 {
-first_name: "Joel",
-last_name: "Brennan",
-email: "joelbrennan0@gmail.com",
-password: "treehouse1234",
-password_confirmation: "treehouse1234"
+		first_name: "Jason",
+		last_name: "Seifer",
+		email: "jason@teamtreehouse.com",
+		password: "treehouse1234",
+		password_confirmation: "treehouse1234"
+	}
 }
-}
+
+context "relationships" do
+	it {should have_many(:todo_lists)}
+end
+
 context "validations" do
-let(:user) {User.new(valid_attributes)}
+let(:user) {User.new(valid_attributes)
+}
 
 before do
 User.create(valid_attributes)
@@ -51,6 +57,18 @@ expect(user.email).to eq("mike@teamtreehouse.com")
 end
 end
 
+describe "#generate_password_reset_token!" do
+	let(:user) {create(:user)}
+	it "changes the password_reset_token_attribute" do
+		expect{user.generate_password_reset_token!}.to change{user.password_reset_token}
+	end
+
+	it "calls SecureRandom.urlsafe_base64 to generate the password_reset_token" do
+	expect(SecureRandom).to receive(:urlsafe_base64)
+	user.generate_password_reset_token!
+	end 
+
+  end
 
 end
 	
